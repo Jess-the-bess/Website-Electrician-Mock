@@ -1,0 +1,6 @@
+{
+  "name": "WestGrid Electrical | Commercial & Industrial Electrical NSW",
+  "description": "Licensed NSW electrical contractors in Parramatta delivering end-to-end design, installation, testing, preventive maintenance, and 24/7 fault repair for Australian businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

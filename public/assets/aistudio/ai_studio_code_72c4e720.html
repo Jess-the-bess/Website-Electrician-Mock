@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WestGrid Electrical | Parramatta NSW — Design, Install, Test, Maintain &amp; Repair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-950: #080e1a;
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --amber-500: #f59e0b;
+      --amber-400: #fbbf24;
+      --amber-700: #b45309;
+      --amber-50: #fffbeb;
+      --emerald-700: #047857;
+      --emerald-50: #ecfdf5;
+      --red-700: #b91c1c;
+      --red-50: #fef2f2;
+      --white: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 24px 48px -12px rgba(8, 14, 26, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--navy-900);
+      background-color: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--amber-400);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Compliance & Dispatch Bar */
+    .top-bar {
+      background: var(--navy-950);
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--amber-400);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .top-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Sticky Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--navy-900);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--navy-900);
+      color: var(--amber-400);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--slate-500);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--slate-700);
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--amber-700);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .phone-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy-900);
+      transition: background 0.15s;
+    }
+
+    .phone-chip:hover {
+      background: var(--slate-200);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--amber-500);
+      color: var(--navy-950);
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--amber-400);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      transition: background 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+      color: var(--navy-900);
+    }
+
+    /* Hero Section */
+    .hero {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(245, 158, 11, 0.14), transparent 42%),
+        radial-gradient(circle at 12% 85%, rgba(56, 189, 248, 0.08), transparent 38%),
+        linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 62%, #17253e 100%);
+      color: var(--white);
+      padding: 64px 0 76px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      color: var(--amber-400);
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.8vw, 3.05rem);
+      line-height: 1.14;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--amber-400);
+    }
+
+    .hero-sub {
+      font-size: 1.03rem;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .lifecycle-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .lifecycle-tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 5px 11px;
+      border-radius: 6px;
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: var(--amber-400);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .hero-trust-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .check-icon {
+      color: var(--amber-400);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Hero Quote Card */
+    .quote-card {
+      background: var(--white);
+      color: var(--navy-900);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .compliance-note {
+      background: var(--slate-100);
+      color: var(--navy-800);
+      border: 1px solid var(--slate-200);
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .quote-card h2 {
+      font-size: 1.32rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .quote-card p.form-sub {
+      font-size: 0.86rem;
+      color: var(--slate-600);
+      margin-bottom: 16px;
+    }
+
+    .urgency-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 14px;
+      background: var(--slate-100);
+      padding: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    .urgency-btn {
+      padding: 9px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: transparent;
+      color: var(--slate-600);
+      transition: all 0.15s;
+    }
+
+    .urgency-btn.active {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .urgency-btn.emergency.active {
+      background: var(--red-50);
+      color: var(--red-700);
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy-800);
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--navy-900);
+      background: var(--slate-50);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--amber-500);
+      background: var(--white);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 13px;
+      font-size: 0.94rem;
+      margin-top: 6px;
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      font-size: 0.74rem;
+      color: var(--slate-500);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .quote-success {
+      display: none;
+      text-align: center;
+      padding: 24px 8px;
+    }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--emerald-50);
+      color: var(--emerald-700);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+    }
+
+    /* Credentials Strip */
+    .trust-strip {
+      background: var(--slate-50);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 22px 0;
+    }
+
+    .trust-strip-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .trust-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--navy-800);
+    }
+
+    .trust-badge-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      display: grid;
+      place-items: center;
+      color: var(--navy-900);
+      flex-shrink: 0;
+    }
+
+    /* Section Commons */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--amber-700);
+      background: var(--amber-50);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--navy-900);
+    }
+
+    .section-header p {
+      color: var(--slate-600);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Sector Tabs & 4-Sector Showcase */
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .sector-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: left;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .sector-card:hover {
+      background: var(--white);
+      border-color: var(--amber-500);
+      box-shadow: var(--shadow-md);
+    }
+
+    .sector-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--amber-700);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .sector-card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--navy-900);
+    }
+
+    .sector-card p {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      margin-bottom: 14px;
+    }
+
+    .sector-action {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      background: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sector-action:hover {
+      color: var(--amber-700);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--amber-500);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--navy-900);
+      color: var(--amber-400);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      color: var(--slate-600);
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+    }
+
+    .service-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--slate-100);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .scope-tag {
+      color: var(--emerald-700);
+    }
+
+    .select-service-link {
+      color: var(--navy-900);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+      background: none;
+      font-size: 0.82rem;
+    }
+
+    .select-service-link:hover {
+      color: var(--amber-700);
+    }
+
+    /* Interactive Cost Estimator + Parramatta Standards */
+    .estimator-section {
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .split-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .guarantees-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .guarantee-item {
+      display: flex;
+      gap: 16px;
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guarantee-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--amber-50);
+      color: var(--amber-700);
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .guarantee-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .guarantee-item p {
+      font-size: 0.86rem;
+      color: var(--slate-600);
+    }
+
+    .estimator-box {
+      background: var(--navy-900);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .estimator-box h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .estimator-box > p {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .est-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+
+    .est-select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .est-select option {
+      color: var(--navy-900);
+      background: var(--white);
+    }
+
+    .est-result {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 18px 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .est-price {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--amber-400);
+    }
+
+    /* 3-Step Delivery Process */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 30px 24px;
+      border-radius: var(--radius-md);
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+    }
+
+    .step-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--navy-900);
+      color: var(--amber-400);
+      font-weight: 800;
+      font-size: 1rem;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+    }
+
+    .step-card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.87rem;
+      color: var(--slate-600);
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      background: var(--navy-950);
+      color: var(--white);
+    }
+
+    .reviews-section .section-header h2 {
+      color: var(--white);
+    }
+
+    .reviews-section .section-header p {
+      color: #94a3b8;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin: 14px 0 20px;
+      line-height: 1.65;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 14px;
+      font-size: 0.82rem;
+    }
+
+    .reviewer strong {
+      display: block;
+      color: var(--white);
+    }
+
+    .reviewer span {
+      color: #94a3b8;
+    }
+
+    .verified-tag {
+      color: #34d399;
+      font-weight: 700;
+      font-size: 0.76rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: var(--white);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-btn:hover {
+      background: var(--slate-50);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--amber-700);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+      padding: 0 24px;
+      color: var(--slate-600);
+      font-size: 0.9rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 240px;
+      padding-bottom: 20px;
+    }
+
+    /* Final CTA Banner */
+    .cta-banner {
+      padding: 0 0 80px;
+    }
+
+    .cta-box {
+      background: linear-gradient(120deg, var(--amber-500) 0%, #f59e0b 60%, #fbbf24 100%);
+      color: var(--navy-950);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.05rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .cta-box p {
+      font-weight: 600;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      max-width: 600px;
+    }
+
+    .btn-dark {
+      background: var(--navy-950);
+      color: var(--white);
+      padding: 15px 26px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.94rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s;
+    }
+
+    .btn-dark:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy-950);
+      color: #94a3b8;
+      padding: 56px 0 28px;
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer h4 {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .footer ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer a:hover {
+      color: var(--amber-400);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--navy-900);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--amber-400);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.86rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: all 0.25s;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .split-feature,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sector-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-grid,
+      .reviews-grid,
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links,
+      .phone-chip {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--slate-200);
+        box-shadow: var(--shadow-md);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .sector-grid,
+      .services-grid,
+      .reviews-grid,
+      .steps-grid,
+      .hero-trust-list,
+      .form-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 32px 24px;
+      }
+
+      .top-meta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Compliance & Dispatch Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>24/7 Fault &amp; Emergency Response — Greater Parramatta &amp; Sydney</span>
+      </div>
+      <div class="top-meta">
+        <span>NSW Contractor Lic #384912C</span>
+        <span>•</span>
+        <span>88 Macquarie St, Parramatta NSW 2150</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </span>
+        <span>
+          WestGrid<span style="color: var(--amber-700);">Electrical</span>
+          <span class="brand-sub">Parramatta • NSW 2150</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="#sectors">Sectors</a>
+        <a href="#services">Services</a>
+        <a href="#estimator">Cost Guide</a>
+        <a href="#standards">Standards</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="phone-chip" onclick="copyPhone()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          (02) 9635 4820
+        </button>
+        <a href="#quote" class="btn-primary">Request a Quote</a>
+        <button type="button" class="mobile-menu-btn" aria-label="Toggle Menu" onclick="toggleMenu()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="location-pill">
+          <span class="stars">★★★★★</span>
+          <span>4.9/5 Google Rating • Based in Parramatta CBD</span>
+        </div>
+
+        <h1>
+          End-to-End Electrical Systems—<span>Engineered, Installed &amp; Maintained.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Licensed NSW electricians delivering compliant design, installation, testing, preventive maintenance, and repair across electrical wiring, switchboards, data networks, and appliances.
+        </p>
+
+        <div class="lifecycle-tags">
+          <span class="lifecycle-tag">Design</span>
+          <span class="lifecycle-tag">Install</span>
+          <span class="lifecycle-tag">Test</span>
+          <span class="lifecycle-tag">Maintain</span>
+          <span class="lifecycle-tag">Repair</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#quote" class="btn-primary">Book Site Quote or Dispatch →</a>
+          <a href="#estimator" class="btn-secondary">View AUD Cost Guide</a>
+        </div>
+
+        <div class="hero-trust-list">
+          <div class="hero-trust-item">
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>AS/NZS 3000 Wiring Rules</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>CCEW Issued Every Job</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>$20M Public Liability</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Above-the-fold Quote & Dispatch Card -->
+      <div class="quote-card" id="quote">
+        <div class="compliance-note">
+          AS/NZS 3000 Compliant • Upfront Written Quotes (AUD incl. GST)
+        </div>
+
+        <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+          <h2>Request a Quote or Site Assessment</h2>
+          <p class="form-sub">Serving Parramatta, Western Sydney &amp; Greater Metro.</p>
+
+          <div class="urgency-toggle">
+            <button type="button" class="urgency-btn active" onclick="setUrgency(this, 'Scheduled Quote / Works')">Scheduled Works</button>
+            <button type="button" class="urgency-btn emergency" onclick="setUrgency(this, '24/7 Urgent Fault Call-Out')">⚡ Urgent Fault</button>
+          </div>
+          <input type="hidden" id="urgencyInput" value="Scheduled Quote / Works" />
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="sectorSelect">Setting / Sector</label>
+              <select id="sectorSelect" class="form-control" required>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Infrastructure">Infrastructure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="postcodeInput">NSW Postcode</label>
+              <input type="text" id="postcodeInput" class="form-control" placeholder="2150" maxlength="4" pattern="\d{4}" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="serviceSelect">Required Electrical Scope</label>
+            <select id="serviceSelect" class="form-control" required>
+              <option value="Switchboards, RCDs &amp; Distribution Boards">Switchboards, RCDs &amp; Distribution Boards</option>
+              <option value="Electrical Design, Wiring &amp; Fit-Outs">Electrical Design, Wiring &amp; Fit-Outs</option>
+              <option value="Testing, Tagging &amp; Compliance Audits">Testing, Tagging &amp; Compliance Audits</option>
+              <option value="Preventive Maintenance &amp; Fault Repair">Preventive Maintenance &amp; Fault Repair</option>
+              <option value="Data, Comms &amp; Network Cabling">Data, Comms &amp; Network Cabling</option>
+              <option value="EV Chargers &amp; Appliance Connections">EV Chargers &amp; Appliance Connections</option>
+            </select>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="fullName">Name / Organisation</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Liam O'Connor" required />
+            </div>
+            <div class="form-group">
+              <label for="phoneInput">Mobile / Direct Phone</label>
+              <input type="tel" id="phoneInput" class="form-control" placeholder="0412 345 678" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary submit-btn">
+            Request Itemised Quote →
+          </button>
+          <p class="form-disclaimer">No obligation. Direct communication with a licensed Parramatta electrician.</p>
+        </form>
+
+        <div class="quote-success" id="quoteSuccess">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">Enquiry Logged</h3>
+          <p style="color: var(--slate-600); font-size: 0.88rem; margin-bottom: 18px;" id="successDetails">
+            Our Parramatta operations coordinator will contact you shortly.
+          </p>
+          <button type="button" class="btn-primary" onclick="resetForm()">Log Another Enquiry</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Australian Compliance & Trust Strip -->
+  <div class="trust-strip">
+    <div class="container trust-strip-grid">
+      <div class="trust-badge-item">
+        <span class="trust-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </span>
+        <span>$20M Public Liability Insured</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </span>
+        <span>CCEW &amp; AS/NZS 3000 Certified</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </span>
+        <span>NSW Lic #384912C</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </span>
+        <span>24/7 Emergency Call-Out</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </span>
+        <span>Parramatta Dispatch Hub</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sectors & Services Section -->
+  <section id="sectors">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Four Core Environments</span>
+        <h2>Built for Residential, Commercial, Industrial &amp; Infrastructure</h2>
+        <p>From heritage cottages in North Parramatta to three-phase plant rooms in Silverwater and civic infrastructure corridors.</p>
+      </div>
+
+      <div class="sector-grid">
+        <div class="sector-card">
+          <span class="sector-label">01 • Residential</span>
+          <h3>Homes &amp; Strata</h3>
+          <p>Switchboard RCD upgrades, full rewiring, EV chargers, lighting, NBN data points, and fixed-appliance installations.</p>
+          <button type="button" class="sector-action" onclick="selectSector('Residential')">Enquire Residential →</button>
+        </div>
+
+        <div class="sector-card">
+          <span class="sector-label">02 • Commercial</span>
+          <h3>Offices, Retail &amp; Hospitality</h3>
+          <p>Tenancy make-goods, lighting design, structured Cat6A/fibre networks, emergency exit testing, and commercial kitchen appliances.</p>
+          <button type="button" class="sector-action" onclick="selectSector('Commercial')">Enquire Commercial →</button>
+        </div>
+
+        <div class="sector-card">
+          <span class="sector-label">03 • Industrial</span>
+          <h3>Warehouses &amp; Manufacturing</h3>
+          <p>Three-phase power distribution, motor control centres, high-bay LED retrofits, thermal switchboard audits, and PPM contracts.</p>
+          <button type="button" class="sector-action" onclick="selectSector('Industrial')">Enquire Industrial →</button>
+        </div>
+
+        <div class="sector-card">
+          <span class="sector-label">04 • Infrastructure</span>
+          <h3>Public, Utilities &amp; Civil</h3>
+          <p>Street &amp; precinct lighting, pit-and-conduit reticulation, sub-main cabling, backup UPS integration, and network telemetry.</p>
+          <button type="button" class="sector-action" onclick="selectSector('Infrastructure')">Enquire Infrastructure →</button>
+        </div>
+      </div>
+
+      <div class="section-header" id="services" style="margin-top: 24px;">
+        <span class="eyebrow">Full-Lifecycle Capabilities</span>
+        <h2>Design, Install, Test, Maintain &amp; Repair</h2>
+        <p>Comprehensive technical execution across electrical systems, switchboards, wiring, networks, and appliances.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M9 9h6v6H9z"></path>
+                <path d="M9 3v6M15 3v6M9 15v6M15 15v6"></path>
+              </svg>
+            </div>
+            <h3>Switchboards &amp; Main Distribution</h3>
+            <p>Custom switchboard design, asbestos-panel replacements, RCBO safety switch upgrades, three-phase conversions, and surge protection to AS/NZS 3000.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">Install • Upgrade • Certify</span>
+            <button type="button" class="select-service-link" onclick="bookService('Switchboards, RCDs & Distribution Boards')">Book Quote →</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 20h20M4 20V8l8-5 8 5v12"></path>
+                <path d="M9 20v-6h6v6"></path>
+              </svg>
+            </div>
+            <h3>Electrical Design &amp; Complete Wiring</h3>
+            <p>Load calculations, CAD schematics, new-build rough-ins, commercial fit-outs, sub-main trenching, and legacy TRS/VIR rewiring.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">Design • Wire • Commission</span>
+            <button type="button" class="select-service-link" onclick="bookService('Electrical Design, Wiring & Fit-Outs')">Book Quote →</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <h3>Testing, Tagging &amp; Compliance Audits</h3>
+            <p>AS/NZS 3760 appliance test &amp; tag, RCD trip-time verification, emergency &amp; exit lighting logbooks, and thermal switchboard imaging.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">Test • Inspect • Report</span>
+            <button type="button" class="select-service-link" onclick="bookService('Testing, Tagging & Compliance Audits')">Book Quote →</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <h3>Maintenance &amp; 24/7 Fault Repair</h3>
+            <p>Scheduled preventive maintenance (PPM) for strata and industrial sites plus rapid fault-finding for outages, tripping RCDs, and burnt terminations.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">Maintain • Fault-Find • Repair</span>
+            <button type="button" class="select-service-link" onclick="bookService('Preventive Maintenance & Fault Repair', true)">Dispatch →</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3>Networks, Data &amp; Communications</h3>
+            <p>Cat6A and fibre optic structured cabling, patch panels, server rack power/UPS redundancy, NBN lead-in conduits, and access control wiring.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">ACMA Open Cabler</span>
+            <button type="button" class="select-service-link" onclick="bookService('Data, Comms & Network Cabling')">Book Quote →</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3>EV Chargers &amp; Fixed Appliances</h3>
+            <p>Dedicated circuits, load-managed EVSE chargers, induction cooktops, commercial ovens, hot-water systems, and appliance fault diagnostics.</p>
+          </div>
+          <div class="service-meta">
+            <span class="scope-tag">Install • Test • Repair</span>
+            <button type="button" class="select-service-link" onclick="bookService('EV Chargers & Appliance Connections')">Book Quote →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards + Interactive AUD Estimator -->
+  <section class="estimator-section" id="estimator">
+    <div class="container split-feature" id="standards">
+      <div>
+        <span class="eyebrow">Australian Engineering &amp; Safety Standards</span>
+        <h2 style="font-size: clamp(1.65rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em;">
+          Accountable Workmanship Backed by Documentation
+        </h2>
+        <p style="color: var(--slate-600); margin-bottom: 24px; font-size: 0.96rem;">
+          Operating out of our Parramatta CBD headquarters, our team pairs practical site experience with rigorous compliance reporting for homeowners, strata committees, and facility managers.
+        </p>
+
+        <div class="guarantees-list">
+          <div class="guarantee-item">
+            <div class="guarantee-num">01</div>
+            <div>
+              <h3>Clear Written Quotations (AUD incl. GST)</h3>
+              <p>Every non-emergency job receives a fixed-scope, itemised proposal before work commences—no hidden call-out surcharges.</p>
+            </div>
+          </div>
+
+          <div class="guarantee-item">
+            <div class="guarantee-num">02</div>
+            <div>
+              <h3>Mandatory CCEW &amp; Test Logs</h3>
+              <p>Upon completion, we lodge your Certificate of Compliance for Electrical Work (CCEW) with NSW Fair Trading and provide digital test results.</p>
+            </div>
+          </div>
+
+          <div class="guarantee-item">
+            <div class="guarantee-num">03</div>
+            <div>
+              <h3>SWMS &amp; Out-of-Hours Flexibility</h3>
+              <p>Site-specific Safe Work Method Statements (SWMS) for commercial/industrial sites, with night and weekend shutdown windows available.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Realistic AUD Scope Estimator -->
+      <div class="estimator-box">
+        <h3>Realistic AUD Project Cost Guide</h3>
+        <p>Select a common scope below for an indicative Australian price range (incl. GST). Commercial &amp; industrial tenders are priced via site walk-through.</p>
+
+        <label class="est-label" for="estProject">Electrical Scope</label>
+        <select id="estProject" class="est-select" onchange="updateEstimate()">
+          <option value="switchboard">Single-Phase Switchboard &amp; RCBO Upgrade</option>
+          <option value="ev">7kW / 22kW EV Charger Installation</option>
+          <option value="data">Structured Cat6A Data Points (4–6 Runs)</option>
+          <option value="test">Commercial Test &amp; Tag / RCD Audit (Up to 50 Items)</option>
+          <option value="appliance">Dedicated Appliance Circuit / Fault Repair</option>
+          <option value="tender">Industrial / Infrastructure / Multi-Tenancy Fit-Out</option>
+        </select>
+
+        <label class="est-label" for="estComplexity">Site Access &amp; Wiring Complexity</label>
+        <select id="estComplexity" class="est-select" onchange="updateEstimate()">
+          <option value="1">Standard Access (Clear Roof/Cavity, Nearby Board)</option>
+          <option value="1.25">Moderate (Double-Storey, Longer Sub-Main / Conduit Run)</option>
+          <option value="1.5">Complex (Solid Brick/Concrete Core, Heritage or 3-Phase)</option>
+        </select>
+
+        <div class="est-result">
+          <div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: #cbd5e1; font-weight: 700;">Indicative Range (AUD incl. GST)</div>
+            <div class="est-price" id="estRange">$1,350 – $1,950</div>
+          </div>
+          <div style="text-align: right; font-size: 0.78rem; color: #34d399; font-weight: 700;">
+            Includes Testing &amp;<br />CCEW Lodgement
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" style="width: 100%;" onclick="lockEstimate()">
+          Request Exact Site Quote →
+        </button>
+        <p style="font-size: 0.74rem; color: #94a3b8; margin-top: 10px; text-align: center;">
+          Indicative guide only. Final fixed pricing is confirmed following a physical or plan-based inspection.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Delivery Process -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Structured Delivery</span>
+        <h2>How We Deliver Safe, Compliant Outcomes</h2>
+        <p>Whether upgrading a domestic switchboard or commissioning industrial distribution, our workflow remains disciplined.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-badge">1</div>
+          <h3>Assess &amp; Design</h3>
+          <p>We review your electrical loads, plans, or fault symptoms on-site and issue an itemised written quote tailored to AS/NZS 3000.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge">2</div>
+          <h3>Install, Test &amp; Verify</h3>
+          <p>Licensed tradespeople complete the installation or repair cleanly, conducting continuity, insulation resistance, and RCD trip testing.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-badge">3</div>
+          <h3>Certify &amp; Maintain</h3>
+          <p>We lodge your NSW CCEW certificate, update circuit schedules, and offer optional scheduled maintenance to prevent future downtime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Australian Client Reviews -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Verified Greater Parramatta Feedback</span>
+        <h2>Trusted by Homeowners, Strata &amp; Facility Managers</h2>
+        <p>Consistent delivery across residential streets, commercial towers, and industrial estates.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Had WestGrid replace an old ceramic-fuse board in our Harris Park Federation home with a new 12-pole RCBO switchboard. Neat labelling, zero mess, and the CCEW arrived in my inbox that afternoon."
+            </p>
+          </div>
+          <div class="reviewer">
+            <div>
+              <strong>Lachlan &amp; Priya M.</strong>
+              <span>Switchboard Upgrade • Harris Park 2150</span>
+            </div>
+            <span class="verified-tag">✓ Residential</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "We engaged them for our Parramatta CBD office fit-out—lighting controls, 24 Cat6A data outlets, server rack UPS power, and exit-light certification. Delivered on schedule before handover."
+            </p>
+          </div>
+          <div class="reviewer">
+            <div>
+              <strong>Claire Henderson</strong>
+              <span>Commercial Fit-Out • Parramatta 2150</span>
+            </div>
+            <span class="verified-tag">✓ Commercial</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Our Silverwater warehouse lost a three-phase distribution feeder at 6 AM. Their tech isolated the fault, replaced the damaged contactor, and now handles our annual thermal imaging and test &amp; tag."
+            </p>
+          </div>
+          <div class="reviewer">
+            <div>
+              <strong>Greg T. — Operations Mgr</strong>
+              <span>3-Phase Repair &amp; PPM • Silverwater 2128</span>
+            </div>
+            <span class="verified-tag">✓ Industrial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Frequently Asked Questions</span>
+        <h2>Licensing, Compliance &amp; Service Coverage</h2>
+        <p>Practical answers for residential, commercial, and industrial clients.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+            <span>Do you issue a Certificate of Compliance for Electrical Work (CCEW)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. Under NSW Fair Trading regulations, we test all completed electrical installation work to AS/NZS 3000 standards and submit a CCEW to both you and NSW Fair Trading upon completion.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+            <span>What areas do you service from your Parramatta office?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            From our Macquarie Street hub in Parramatta (2150), we service Westmead, Northmead, Harris Park, Rydalmere, Silverwater, Ryde, Blacktown, the Hills District, and wider Greater Sydney for commercial, industrial, and infrastructure contracts.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+            <span>Can you handle data networks and appliances alongside main power?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. Our technicians hold ACMA Open Registration for structured Cat6A/fibre cabling alongside full electrical licences, allowing us to design, install, test, and repair power systems, switchboards, networks, and fixed appliances under one contractor.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-btn" onclick="toggleFaq(this)">
+            <span>Do you offer ongoing maintenance agreements for commercial &amp; industrial sites?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. We provide scheduled Planned Preventive Maintenance (PPM) programs covering RCD push-button &amp; trip-time testing, emergency &amp; exit lighting compliance, thermal imaging of switchboards, and AS/NZS 3760 test &amp; tag.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Need a Licensed Electrician in Parramatta or Greater Sydney?</h2>
+          <p>Speak directly with our Macquarie Street team for scheduled projects, preventive maintenance, or 24/7 fault dispatch.</p>
+        </div>
+        <a href="#quote" class="btn-dark">Request Your Quote Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Static Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#top" class="brand" style="color: var(--white); margin-bottom: 12px;">
+            <span class="brand-icon" style="background: var(--amber-500); color: var(--navy-950);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </span>
+            <span>WestGrid Electrical</span>
+          </a>
+          <p style="max-width: 340px; line-height: 1.65; margin-bottom: 12px;">
+            Design, installation, testing, maintenance, and repair of electrical systems, wiring, switchboards, networks, and appliances across residential, commercial, industrial, and infrastructure settings.
+          </p>
+          <p style="color: #cbd5e1; font-weight: 600;">
+            Suite 3, 88 Macquarie Street<br />
+            Parramatta NSW 2150, Australia
+          </p>
+        </div>
+
+        <div>
+          <h4>Sectors &amp; Services</h4>
+          <ul>
+            <li><a href="#sectors">Residential &amp; Strata</a></li>
+            <li><a href="#sectors">Commercial Fit-Outs</a></li>
+            <li><a href="#sectors">Industrial &amp; 3-Phase</a></li>
+            <li><a href="#sectors">Infrastructure &amp; Networks</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>On This Page</h4>
+          <ul>
+            <li><a href="#services">Full-Lifecycle Services</a></li>
+            <li><a href="#estimator">AUD Cost Guide</a></li>
+            <li><a href="#standards">Compliance &amp; CCEW</a></li>
+            <li><a href="#faq">Common Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Parramatta Office &amp; Hours</h4>
+          <ul>
+            <li style="color: var(--white); font-weight: 700;">(02) 9635 4820</li>
+            <li>Mon–Fri: 7:00 AM – 5:30 PM</li>
+            <li>24/7 Emergency Fault Dispatch</li>
+            <li>NSW Lic: #384912C</li>
+            <li>ABN: 48 612 904 318</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 WestGrid Electrical Pty Ltd. All rights reserved. (Static Mock Demo)</span>
+        <span>AS/NZS 3000 Compliant • $20M Public Liability Insured • Parramatta NSW 2150</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Phone number (02) 9635 4820 copied to clipboard.</div>
+
+  <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('mobile-open');
+    }
+
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('mobile-open');
+      });
+    });
+
+    // Urgency Toggle inside Hero Form
+    function setUrgency(btn, label) {
+      document.querySelectorAll('.urgency-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('urgencyInput').value = label;
+    }
+
+    // Pre-select Sector from Sector Cards
+    function selectSector(sectorName) {
+      const sectorSelect = document.getElementById('sectorSelect');
+      sectorSelect.value = sectorName;
+      document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('serviceSelect').focus(), 450);
+    }
+
+    // Pre-select Service from Services Grid
+    function bookService(serviceName, isEmergency = false) {
+      const select = document.getElementById('serviceSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === serviceName) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+
+      const buttons = document.querySelectorAll('.urgency-btn');
+      if (isEmergency) {
+        setUrgency(buttons[1], '24/7 Urgent Fault Call-Out');
+      } else {
+        setUrgency(buttons[0], 'Scheduled Quote / Works');
+      }
+
+      document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('fullName').focus(), 450);
+    }
+
+    // Static Form Submission Simulation
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const sector = document.getElementById('sectorSelect').value;
+      const service = document.getElementById('serviceSelect').value;
+      const postcode = document.getElementById('postcodeInput').value.trim();
+      const urgency = document.getElementById('urgencyInput').value;
+
+      document.getElementById('successDetails').innerHTML =
+        `Thank you, <strong>${name}</strong>. Your <strong>${urgency}</strong> enquiry for <strong>${sector} — ${service}</strong> (NSW ${postcode}) has been logged with our Parramatta desk.`;
+
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('quoteSuccess').style.display = 'block';
+    }
+
+    function resetForm() {
+      document.getElementById('quoteForm').reset();
+      document.getElementById('quoteForm').style.display = 'block';
+      document.getElementById('quoteSuccess').style.display = 'none';
+    }
+
+    // Interactive Realistic Australian AUD Cost Estimator
+    const basePrices = {
+      switchboard: [1350, 1950, 'Switchboards, RCDs & Distribution Boards'],
+      ev: [1100, 1850, 'EV Chargers & Appliance Connections'],
+      data: [750, 1300, 'Data, Comms & Network Cabling'],
+      test: [280, 480, 'Testing, Tagging & Compliance Audits'],
+      appliance: [220, 460, 'Preventive Maintenance & Fault Repair'],
+      tender: [0, 0, 'Electrical Design, Wiring & Fit-Outs']
+    };
+
+    function updateEstimate() {
+      const project = document.getElementById('estProject').value;
+      const mult = parseFloat(document.getElementById('estComplexity').value);
+      const [min, max] = basePrices[project];
+
+      if (min === 0) {
+        document.getElementById('estRange').textContent = 'Site Walk-Through & Tender';
+        return;
+      }
+
+      const adjMin = Math.round((min * mult) / 10) * 10;
+      const adjMax = Math.round((max * mult) / 10) * 10;
+
+      document.getElementById('estRange').textContent =
+        `$${adjMin.toLocaleString()} – $${adjMax.toLocaleString()}`;
+    }
+
+    function lockEstimate() {
+      const project = document.getElementById('estProject').value;
+      const serviceName = basePrices[project][2];
+      if (project === 'tender') {
+        document.getElementById('sectorSelect').value = 'Commercial';
+      }
+      bookService(serviceName);
+    }
+
+    // FAQ Accordion
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Copy Phone Number (Static Toast)
+    function copyPhone() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText('(02) 9635 4820').catch(() => {});
+      }
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+  </script>
+</body>
+</html>
